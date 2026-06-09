@@ -1,68 +1,68 @@
 {
-  "date": "2026-06-08",
-  "timestamp": "2026-06-08T14:48:30.848Z",
+  "date": "2026-06-09",
+  "timestamp": "2026-06-09T14:20:33.433Z",
   "source": "CME Group — SOFR strip rates (fallback)",
-  "curveDate": "June-8-2026",
+  "curveDate": "June-9-2026",
   "forwardCurve": [
     {
       "date": "July-26",
       "year": 2026,
       "month": 7,
-      "sofr": 3.62103
+      "sofr": 3.62405
     },
     {
       "date": "September-26",
       "year": 2026,
       "month": 9,
-      "sofr": 3.66135
+      "sofr": 3.66503
     },
     {
       "date": "December-26",
       "year": 2026,
       "month": 12,
-      "sofr": 3.7396
+      "sofr": 3.74772
     },
     {
       "date": "June-27",
       "year": 2027,
       "month": 6,
-      "sofr": 3.9218
+      "sofr": 3.9289
     },
     {
       "date": "June-28",
       "year": 2028,
       "month": 6,
-      "sofr": 4.0143
+      "sofr": 4.0104
     },
     {
       "date": "June-29",
       "year": 2029,
       "month": 6,
-      "sofr": 4.0042
+      "sofr": 3.9981
     },
     {
       "date": "June-31",
       "year": 2031,
       "month": 6,
-      "sofr": 4.0044
+      "sofr": 4.002
     },
     {
       "date": "June-36",
       "year": 2036,
       "month": 6,
-      "sofr": 4.143
+      "sofr": 4.1468
     },
     {
       "date": "June-46",
       "year": 2046,
       "month": 6,
-      "sofr": 4.3428
+      "sofr": 4.3578
     },
     {
       "date": "June-56",
       "year": 2056,
       "month": 6,
-      "sofr": 4.2862
+      "sofr": 4.3071
     }
   ]
 }
