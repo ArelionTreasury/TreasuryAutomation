@@ -303,32 +303,41 @@ await page.goto('https://cf.com/rates/us/sofr-swaps-annual-annual', {
 await page.waitForTimeout(6000);
 
 const swapRates = await page.evaluate(() => {
+
   const results = [];
 
-  // Look through all elements
-  const elements = document.querySelectorAll('*');
+  const buttons = document.querySelectorAll('button');
 
-  elements.forEach(el => {
-    const text = el.innerText?.trim();
+  buttons.forEach(btn => {
+
+    const aria = btn.getAttribute('aria-label');
 
     // Match tenors like "1 Year"
-    if (text && text.match(/^\d+\s*(Year|Yr)$/i)) {
+    if (aria && aria.match(/^\d+\s*Year/i)) {
 
-      const parent = el.parentElement;
-      const next = parent?.nextElementSibling;
+      const container = btn.closest('div');
+      if (!container) return;
 
-      const rateText = next?.innerText?.trim();
+      const text = container.innerText;
 
-      if (rateText && rateText.includes('%')) {
+      const match = text.match(/(\d+\.\d+)%/);
+
+      if (match) {
         results.push({
-          tenor: text,
-          rate: rateText
+          tenor: aria,
+          rate: match[1]
         });
       }
     }
   });
 
-  return results;
+  // remove duplicates
+  const unique = {};
+  results.forEach(r => {
+    unique[r.tenor] = r;
+  });
+
+  return Object.values(unique);
 });
 
 console.log(`  Found ${swapRates.length} swap rows`);
