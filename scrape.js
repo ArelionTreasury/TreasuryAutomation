@@ -6,7 +6,7 @@ require('dotenv').config();
 const DATA_DIR = path.join(__dirname, 'data');
 const HISTORY_FILE = path.join(DATA_DIR, 'sofr_history.json');
 const LATEST_FILE = path.join(DATA_DIR, 'sofr_latest.json');
-const LATEST_CSV  = path.join(DATA_DIR, 'sofr_latest.csv');
+const FORWARD_CSV = path.join(DATA_DIR, 'sofr_forward.csv');
 const RAW_XLSX    = path.join(DATA_DIR, 'chatham_raw.xlsx');
 
 const CME_TERM_SOFR_URL = 'https://www.cmegroup.com/services/sofr-strip-rates';
@@ -63,11 +63,36 @@ async function main() {
   for (const pt of snapshot.forwardCurve) {
     csv += `${pt.date},${pt.year},${pt.sofr}\n`;
   }
-  fs.writeFileSync(LATEST_CSV, csv);
+fs.writeFileSync(FORWARD_CSV, csv);
+
+// ─── NEW: Write swap CSV ─────────
+
+if (snapshot.swapRates && snapshot.swapRates.length > 0) {
+
+  let swapCsv = 'date,tenor,rate\n';
+
+  for (const s of snapshot.swapRates) {
+
+    const tenor = s.tenor
+      .replace(/years?/i, 'Y')
+      .replace(/\s+/g, '')
+      .toUpperCase();
+
+    const rate = parseFloat(s.rate.replace('%', ''));
+
+    if (!isNaN(rate)) {
+      swapCsv += `${snapshot.date},${tenor},${rate}\n`;
+    }
+  }
+
+  fs.writeFileSync(path.join(DATA_DIR, 'sofr_swaps.csv'), swapCsv);
+
+  console.log(`  Swap CSV written → data/sofr_swaps.csv`);
+}
 
   console.log(`\n✓ Scraped SOFR forward curve for ${today} — ${snapshot.forwardCurve.length} monthly points`);
   console.log(`  History file: ${history.length} snapshots`);
-  console.log(`  CSV written → data/sofr_latest.csv`);
+  console.log(`  Forward CSV written → data/sofr_forward.csv`);
 
   // Show first 5 rows
   console.log('\n  First 5 rows:');
@@ -268,6 +293,45 @@ async function downloadChathamExcel() {
     await page.waitForTimeout(5000);
     await page.screenshot({ path: path.join(DATA_DIR, 'step3_rates_page.png') });
     console.log('✓ Rates page loaded');
+    // ─── NEW: Go to SOFR swaps page and extract swap rates ─────────
+
+console.log('\nNavigating to SOFR swaps page...');
+await page.goto('https://cf.com/rates/us/sofr-swaps-annual-annual', {
+  waitUntil: 'domcontentloaded',
+  timeout: 30000
+});
+await page.waitForTimeout(6000);
+
+const swapRates = await page.evaluate(() => {
+  const results = [];
+
+  // Look through all elements
+  const elements = document.querySelectorAll('*');
+
+  elements.forEach(el => {
+    const text = el.innerText?.trim();
+
+    // Match tenors like "1 Year"
+    if (text && text.match(/^\d+\s*(Year|Yr)$/i)) {
+
+      const parent = el.parentElement;
+      const next = parent?.nextElementSibling;
+
+      const rateText = next?.innerText?.trim();
+
+      if (rateText && rateText.includes('%')) {
+        results.push({
+          tenor: text,
+          rate: rateText
+        });
+      }
+    }
+  });
+
+  return results;
+});
+
+console.log(`  Found ${swapRates.length} swap rows`);
 
     // Step 3: Scroll down to find SOFR Forward Curve section and its download button
     // The rates page is a summary — the forward curve and download may be further down
@@ -425,7 +489,9 @@ async function downloadChathamExcel() {
 
     // Step 5: Parse the Excel file
     const snapshot = parseChathamExcel(RAW_XLSX);
+    snapshot.swapRates = swapRates;
     return snapshot;
+``
 
   } finally {
     await browser.close();
