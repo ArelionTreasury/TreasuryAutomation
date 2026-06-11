@@ -33,7 +33,8 @@ csv += `${snapshot.curveDate},${pt.date},${pt.year},${pt.sofr}\n`;
   fs.writeFileSync(FORWARD_CSV, csv);
 // ─── NEW: Write tenor-based forward curve ─────────
 
-let tenorCsv = 'curve_date,tenor,rate\n
+let tenorCsv = 'curve_date,tenor,rate\n';
+``
 
 snapshot.forwardCurve.forEach((pt, index) => {
 
