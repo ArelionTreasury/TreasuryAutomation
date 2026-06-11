@@ -56,7 +56,7 @@ console.log('Forward tenor CSV written → data/sofr_forward_tenor.csv');
 
   // ✅ Write swap CSV
   if (snapshot.swapRates && snapshot.swapRates.length > 0) {
-    let swapCsv = 'date,tenor,rate\n';let swapCsv = 'curve_date,tenor,rate\n';
+let swapCsv = 'curve_date,tenor,rate\n';
 ``
     for (const s of snapshot.swapRates) {
       const tenor = s.tenor
