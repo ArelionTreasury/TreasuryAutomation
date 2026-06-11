@@ -42,7 +42,10 @@ jobs:
         run: npx playwright install-deps chromium
 
       - name: Run scraper
-        run: node scrape.js
+  run: node scrape.js
+  env:
+    CHATHAM_EMAIL: ${{ secrets.CHATHAM_EMAIL }}
+    CHATHAM_PASSWORD: ${{ secrets.CHATHAM_PASSWORD }}
 
       - name: Commit updated data
         run: |
