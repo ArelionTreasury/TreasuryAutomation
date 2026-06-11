@@ -306,30 +306,34 @@ const swapRates = await page.evaluate(() => {
 
   const results = [];
 
+  // 1. Get tenors from aria labels
   const buttons = document.querySelectorAll('button');
 
+  const tenors = [];
+
   buttons.forEach(btn => {
-
     const aria = btn.getAttribute('aria-label');
-
-    // Match tenors like "1 Year"
     if (aria && aria.match(/^\d+\s*Year/i)) {
-
-      const container = btn.closest('div');
-      if (!container) return;
-
-      const text = container.innerText;
-
-      const match = text.match(/(\d+\.\d+)%/);
-
-      if (match) {
-        results.push({
-          tenor: aria,
-          rate: match[1]
-        });
-      }
+      tenors.push(aria);
     }
   });
+
+  // 2. Get ALL % values on page
+  const bodyText = document.body.innerText;
+  const rateMatches = bodyText.match(/\d+\.\d+%/g) || [];
+
+  // 3. Pair them (they appear in the same order visually)
+  const n = Math.min(tenors.length, rateMatches.length);
+
+  for (let i = 0; i < n; i++) {
+    results.push({
+      tenor: tenors[i],
+      rate: rateMatches[i]
+    });
+  }
+
+  return results;
+});
 
   // remove duplicates
   const unique = {};
