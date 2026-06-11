@@ -40,12 +40,12 @@ jobs:
       - name: Install Playwright deps (if cached)
         if: steps.pw-cache.outputs.cache-hit == 'true'
         run: npx playwright install-deps chromium
-
+      
       - name: Run scraper
-  run: node scrape.js
-  env:
-    CHATHAM_EMAIL: ${{ secrets.CHATHAM_EMAIL }}
-    CHATHAM_PASSWORD: ${{ secrets.CHATHAM_PASSWORD }}
+        run: node scrape.js
+        env:
+          CHATHAM_EMAIL: ${{ secrets.CHATHAM_EMAIL }}
+          CHATHAM_PASSWORD: ${{ secrets.CHATHAM_PASSWORD }}
 
       - name: Commit updated data
         run: |
