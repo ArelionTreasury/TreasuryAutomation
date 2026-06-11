@@ -26,14 +26,14 @@ async function main() {
   }
 
   // Write forward CSV
-  let csv = 'Date,Year,SOFR\n';
+let csv = 'curve_date,Date,Year,SOFR\n';
   for (const pt of snapshot.forwardCurve) {
-    csv += `${pt.date},${pt.year},${pt.sofr}\n`;
+csv += `${snapshot.curveDate},${pt.date},${pt.year},${pt.sofr}\n`;
   }
   fs.writeFileSync(FORWARD_CSV, csv);
 // ─── NEW: Write tenor-based forward curve ─────────
 
-let tenorCsv = 'tenor,rate\n';
+let tenorCsv = 'curve_date,tenor,rate\n
 
 snapshot.forwardCurve.forEach((pt, index) => {
 
@@ -46,7 +46,7 @@ snapshot.forwardCurve.forEach((pt, index) => {
     tenor = `${years}Y`;
   }
 
-  tenorCsv += `${tenor},${pt.sofr}\n`;
+tenorCsv += `${snapshot.curveDate},${tenor},${pt.sofr}\n`;
 });
 
 fs.writeFileSync(path.join(DATA_DIR, 'sofr_forward_tenor.csv'), tenorCsv);
@@ -55,8 +55,8 @@ console.log('Forward tenor CSV written → data/sofr_forward_tenor.csv');
 
   // ✅ Write swap CSV
   if (snapshot.swapRates && snapshot.swapRates.length > 0) {
-    let swapCsv = 'date,tenor,rate\n';
-
+    let swapCsv = 'date,tenor,rate\n';let swapCsv = 'curve_date,tenor,rate\n';
+``
     for (const s of snapshot.swapRates) {
       const tenor = s.tenor
         .replace(/years?/i, 'Y')
@@ -66,7 +66,7 @@ console.log('Forward tenor CSV written → data/sofr_forward_tenor.csv');
       const rate = parseFloat(s.rate.replace('%', ''));
 
       if (!isNaN(rate)) {
-        swapCsv += `${snapshot.date},${tenor},${rate}\n`;
+swapCsv += `${snapshot.curveDate},${tenor},${rate}\n`;
       }
     }
 
@@ -158,13 +158,32 @@ async function downloadChathamExcel() {
       downloadBtn.click()
     ]);
 
+    const suggestedName = download.suggestedFilename();
+
+// Extract curve date from filename (e.g. 10jun2026)
+let curveDate = null;
+
+const match = suggestedName.match(/(\d{1,2})([a-z]{3})(\d{4})/i);
+
+if (match) {
+  const day = match[1];
+  const mon = match[2];
+  const year = match[3];
+
+  curveDate = `${day}-${mon}-${year}`;
+}
+
+    
     await download.saveAs(RAW_XLSX);
 
-    const snapshot = parseExcel(RAW_XLSX);
 
-    snapshot.swapRates = swapRates;
+const snapshot = parseExcel(RAW_XLSX);
 
-    return snapshot;
+snapshot.swapRates = swapRates;
+snapshot.curveDate = curveDate;   // ✅ ADD THIS LINE
+
+return snapshot;
+
 
   } finally {
     await browser.close();
