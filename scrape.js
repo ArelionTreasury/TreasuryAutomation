@@ -332,7 +332,13 @@ const swapRates = await page.evaluate(() => {
 });
 
 console.log(`  Found ${swapRates.length} swap rows`);
-
+// 🧠 CRITICAL: go back to rates page for forward curve
+console.log('\nReturning to rates page for forward curve...');
+await page.goto('https://cf.com/rates/us', {
+  waitUntil: 'domcontentloaded',
+  timeout: 30000
+});
+await page.waitForTimeout(5000);
     // Step 3: Scroll down to find SOFR Forward Curve section and its download button
     // The rates page is a summary — the forward curve and download may be further down
     // or on a detail "View" page. First scroll to capture all sections visible.
