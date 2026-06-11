@@ -31,6 +31,27 @@ async function main() {
     csv += `${pt.date},${pt.year},${pt.sofr}\n`;
   }
   fs.writeFileSync(FORWARD_CSV, csv);
+// ─── NEW: Write tenor-based forward curve ─────────
+
+let tenorCsv = 'tenor,rate\n';
+
+snapshot.forwardCurve.forEach((pt, index) => {
+
+  let tenor;
+
+  if (index < 12) {
+    tenor = `${index + 1}M`;
+  } else {
+    const years = Math.floor((index + 1) / 12);
+    tenor = `${years}Y`;
+  }
+
+  tenorCsv += `${tenor},${pt.sofr}\n`;
+});
+
+fs.writeFileSync(path.join(DATA_DIR, 'sofr_forward_tenor.csv'), tenorCsv);
+
+console.log('Forward tenor CSV written → data/sofr_forward_tenor.csv');
 
   // ✅ Write swap CSV
   if (snapshot.swapRates && snapshot.swapRates.length > 0) {
