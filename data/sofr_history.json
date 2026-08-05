@@ -29800,5 +29800,739 @@
         "sofr": 4.5021
       }
     ]
+  },
+  {
+    "date": "2026-08-05",
+    "timestamp": "2026-08-05T15:36:19.185Z",
+    "source": "Chatham Financial — Excel download",
+    "curveDate": "August-5-2026",
+    "forwardCurve": [
+      {
+        "date": "August-26",
+        "year": 2026,
+        "month": 8,
+        "sofr": 3.6495
+      },
+      {
+        "date": "September-26",
+        "year": 2026,
+        "month": 9,
+        "sofr": 3.7555
+      },
+      {
+        "date": "October-26",
+        "year": 2026,
+        "month": 10,
+        "sofr": 3.821
+      },
+      {
+        "date": "November-26",
+        "year": 2026,
+        "month": 11,
+        "sofr": 3.895
+      },
+      {
+        "date": "December-26",
+        "year": 2026,
+        "month": 12,
+        "sofr": 3.9584
+      },
+      {
+        "date": "January-27",
+        "year": 2027,
+        "month": 1,
+        "sofr": 4.0011
+      },
+      {
+        "date": "February-27",
+        "year": 2027,
+        "month": 2,
+        "sofr": 4.0244
+      },
+      {
+        "date": "March-27",
+        "year": 2027,
+        "month": 3,
+        "sofr": 4.046
+      },
+      {
+        "date": "April-27",
+        "year": 2027,
+        "month": 4,
+        "sofr": 4.0672
+      },
+      {
+        "date": "May-27",
+        "year": 2027,
+        "month": 5,
+        "sofr": 4.0895
+      },
+      {
+        "date": "June-27",
+        "year": 2027,
+        "month": 6,
+        "sofr": 4.0988
+      },
+      {
+        "date": "July-27",
+        "year": 2027,
+        "month": 7,
+        "sofr": 4.0945
+      },
+      {
+        "date": "August-27",
+        "year": 2027,
+        "month": 8,
+        "sofr": 4.0779
+      },
+      {
+        "date": "September-27",
+        "year": 2027,
+        "month": 9,
+        "sofr": 4.0596
+      },
+      {
+        "date": "October-27",
+        "year": 2027,
+        "month": 10,
+        "sofr": 4.044
+      },
+      {
+        "date": "November-27",
+        "year": 2027,
+        "month": 11,
+        "sofr": 4.0278
+      },
+      {
+        "date": "December-27",
+        "year": 2027,
+        "month": 12,
+        "sofr": 4.0151
+      },
+      {
+        "date": "January-28",
+        "year": 2028,
+        "month": 1,
+        "sofr": 4.0024
+      },
+      {
+        "date": "February-28",
+        "year": 2028,
+        "month": 2,
+        "sofr": 3.9905
+      },
+      {
+        "date": "March-28",
+        "year": 2028,
+        "month": 3,
+        "sofr": 3.9814
+      },
+      {
+        "date": "April-28",
+        "year": 2028,
+        "month": 4,
+        "sofr": 3.9725
+      },
+      {
+        "date": "May-28",
+        "year": 2028,
+        "month": 5,
+        "sofr": 3.9645
+      },
+      {
+        "date": "June-28",
+        "year": 2028,
+        "month": 6,
+        "sofr": 3.9585
+      },
+      {
+        "date": "July-28",
+        "year": 2028,
+        "month": 7,
+        "sofr": 3.9538
+      },
+      {
+        "date": "August-28",
+        "year": 2028,
+        "month": 8,
+        "sofr": 3.9496
+      },
+      {
+        "date": "September-28",
+        "year": 2028,
+        "month": 9,
+        "sofr": 3.9462
+      },
+      {
+        "date": "October-28",
+        "year": 2028,
+        "month": 10,
+        "sofr": 3.9437
+      },
+      {
+        "date": "November-28",
+        "year": 2028,
+        "month": 11,
+        "sofr": 3.9412
+      },
+      {
+        "date": "December-28",
+        "year": 2028,
+        "month": 12,
+        "sofr": 3.9401
+      },
+      {
+        "date": "January-29",
+        "year": 2029,
+        "month": 1,
+        "sofr": 3.9385
+      },
+      {
+        "date": "February-29",
+        "year": 2029,
+        "month": 2,
+        "sofr": 3.9372
+      },
+      {
+        "date": "March-29",
+        "year": 2029,
+        "month": 3,
+        "sofr": 3.9376
+      },
+      {
+        "date": "April-29",
+        "year": 2029,
+        "month": 4,
+        "sofr": 3.9379
+      },
+      {
+        "date": "May-29",
+        "year": 2029,
+        "month": 5,
+        "sofr": 3.9387
+      },
+      {
+        "date": "June-29",
+        "year": 2029,
+        "month": 6,
+        "sofr": 3.9398
+      },
+      {
+        "date": "July-29",
+        "year": 2029,
+        "month": 7,
+        "sofr": 3.9418
+      },
+      {
+        "date": "August-29",
+        "year": 2029,
+        "month": 8,
+        "sofr": 3.9441
+      },
+      {
+        "date": "September-29",
+        "year": 2029,
+        "month": 9,
+        "sofr": 3.9473
+      },
+      {
+        "date": "October-29",
+        "year": 2029,
+        "month": 10,
+        "sofr": 3.95
+      },
+      {
+        "date": "November-29",
+        "year": 2029,
+        "month": 11,
+        "sofr": 3.9527
+      },
+      {
+        "date": "December-29",
+        "year": 2029,
+        "month": 12,
+        "sofr": 3.9568
+      },
+      {
+        "date": "January-30",
+        "year": 2030,
+        "month": 1,
+        "sofr": 3.9606
+      },
+      {
+        "date": "February-30",
+        "year": 2030,
+        "month": 2,
+        "sofr": 3.9638
+      },
+      {
+        "date": "March-30",
+        "year": 2030,
+        "month": 3,
+        "sofr": 3.9695
+      },
+      {
+        "date": "April-30",
+        "year": 2030,
+        "month": 4,
+        "sofr": 3.9738
+      },
+      {
+        "date": "May-30",
+        "year": 2030,
+        "month": 5,
+        "sofr": 3.9788
+      },
+      {
+        "date": "June-30",
+        "year": 2030,
+        "month": 6,
+        "sofr": 3.9846
+      },
+      {
+        "date": "July-30",
+        "year": 2030,
+        "month": 7,
+        "sofr": 3.9903
+      },
+      {
+        "date": "August-30",
+        "year": 2030,
+        "month": 8,
+        "sofr": 3.9961
+      },
+      {
+        "date": "September-30",
+        "year": 2030,
+        "month": 9,
+        "sofr": 4.0026
+      },
+      {
+        "date": "October-30",
+        "year": 2030,
+        "month": 10,
+        "sofr": 4.0094
+      },
+      {
+        "date": "November-30",
+        "year": 2030,
+        "month": 11,
+        "sofr": 4.016
+      },
+      {
+        "date": "December-30",
+        "year": 2030,
+        "month": 12,
+        "sofr": 4.0235
+      },
+      {
+        "date": "January-31",
+        "year": 2031,
+        "month": 1,
+        "sofr": 4.0312
+      },
+      {
+        "date": "February-31",
+        "year": 2031,
+        "month": 2,
+        "sofr": 4.0382
+      },
+      {
+        "date": "March-31",
+        "year": 2031,
+        "month": 3,
+        "sofr": 4.0473
+      },
+      {
+        "date": "April-31",
+        "year": 2031,
+        "month": 4,
+        "sofr": 4.0555
+      },
+      {
+        "date": "May-31",
+        "year": 2031,
+        "month": 5,
+        "sofr": 4.0643
+      },
+      {
+        "date": "June-31",
+        "year": 2031,
+        "month": 6,
+        "sofr": 4.0736
+      },
+      {
+        "date": "July-31",
+        "year": 2031,
+        "month": 7,
+        "sofr": 4.0833
+      },
+      {
+        "date": "August-31",
+        "year": 2031,
+        "month": 8,
+        "sofr": 4.0936
+      },
+      {
+        "date": "September-31",
+        "year": 2031,
+        "month": 9,
+        "sofr": 4.1029
+      },
+      {
+        "date": "October-31",
+        "year": 2031,
+        "month": 10,
+        "sofr": 4.1121
+      },
+      {
+        "date": "November-31",
+        "year": 2031,
+        "month": 11,
+        "sofr": 4.1222
+      },
+      {
+        "date": "December-31",
+        "year": 2031,
+        "month": 12,
+        "sofr": 4.1316
+      },
+      {
+        "date": "January-32",
+        "year": 2032,
+        "month": 1,
+        "sofr": 4.1404
+      },
+      {
+        "date": "February-32",
+        "year": 2032,
+        "month": 2,
+        "sofr": 4.1497
+      },
+      {
+        "date": "March-32",
+        "year": 2032,
+        "month": 3,
+        "sofr": 4.1589
+      },
+      {
+        "date": "April-32",
+        "year": 2032,
+        "month": 4,
+        "sofr": 4.167
+      },
+      {
+        "date": "May-32",
+        "year": 2032,
+        "month": 5,
+        "sofr": 4.1765
+      },
+      {
+        "date": "June-32",
+        "year": 2032,
+        "month": 6,
+        "sofr": 4.1849
+      },
+      {
+        "date": "July-32",
+        "year": 2032,
+        "month": 7,
+        "sofr": 4.1935
+      },
+      {
+        "date": "August-32",
+        "year": 2032,
+        "month": 8,
+        "sofr": 4.2025
+      },
+      {
+        "date": "September-32",
+        "year": 2032,
+        "month": 9,
+        "sofr": 4.2106
+      },
+      {
+        "date": "October-32",
+        "year": 2032,
+        "month": 10,
+        "sofr": 4.2196
+      },
+      {
+        "date": "November-32",
+        "year": 2032,
+        "month": 11,
+        "sofr": 4.2273
+      },
+      {
+        "date": "December-32",
+        "year": 2032,
+        "month": 12,
+        "sofr": 4.2351
+      },
+      {
+        "date": "January-33",
+        "year": 2033,
+        "month": 1,
+        "sofr": 4.2437
+      },
+      {
+        "date": "February-33",
+        "year": 2033,
+        "month": 2,
+        "sofr": 4.2504
+      },
+      {
+        "date": "March-33",
+        "year": 2033,
+        "month": 3,
+        "sofr": 4.2587
+      },
+      {
+        "date": "April-33",
+        "year": 2033,
+        "month": 4,
+        "sofr": 4.2658
+      },
+      {
+        "date": "May-33",
+        "year": 2033,
+        "month": 5,
+        "sofr": 4.2736
+      },
+      {
+        "date": "June-33",
+        "year": 2033,
+        "month": 6,
+        "sofr": 4.2809
+      },
+      {
+        "date": "July-33",
+        "year": 2033,
+        "month": 7,
+        "sofr": 4.2892
+      },
+      {
+        "date": "August-33",
+        "year": 2033,
+        "month": 8,
+        "sofr": 4.2963
+      },
+      {
+        "date": "September-33",
+        "year": 2033,
+        "month": 9,
+        "sofr": 4.3029
+      },
+      {
+        "date": "October-33",
+        "year": 2033,
+        "month": 10,
+        "sofr": 4.3109
+      },
+      {
+        "date": "November-33",
+        "year": 2033,
+        "month": 11,
+        "sofr": 4.3178
+      },
+      {
+        "date": "December-33",
+        "year": 2033,
+        "month": 12,
+        "sofr": 4.3253
+      },
+      {
+        "date": "January-34",
+        "year": 2034,
+        "month": 1,
+        "sofr": 4.333
+      },
+      {
+        "date": "February-34",
+        "year": 2034,
+        "month": 2,
+        "sofr": 4.3395
+      },
+      {
+        "date": "March-34",
+        "year": 2034,
+        "month": 3,
+        "sofr": 4.3476
+      },
+      {
+        "date": "April-34",
+        "year": 2034,
+        "month": 4,
+        "sofr": 4.3558
+      },
+      {
+        "date": "May-34",
+        "year": 2034,
+        "month": 5,
+        "sofr": 4.3635
+      },
+      {
+        "date": "June-34",
+        "year": 2034,
+        "month": 6,
+        "sofr": 4.3705
+      },
+      {
+        "date": "July-34",
+        "year": 2034,
+        "month": 7,
+        "sofr": 4.379
+      },
+      {
+        "date": "August-34",
+        "year": 2034,
+        "month": 8,
+        "sofr": 4.3869
+      },
+      {
+        "date": "September-34",
+        "year": 2034,
+        "month": 9,
+        "sofr": 4.3943
+      },
+      {
+        "date": "October-34",
+        "year": 2034,
+        "month": 10,
+        "sofr": 4.4026
+      },
+      {
+        "date": "November-34",
+        "year": 2034,
+        "month": 11,
+        "sofr": 4.4104
+      },
+      {
+        "date": "December-34",
+        "year": 2034,
+        "month": 12,
+        "sofr": 4.4196
+      },
+      {
+        "date": "January-35",
+        "year": 2035,
+        "month": 1,
+        "sofr": 4.4276
+      },
+      {
+        "date": "February-35",
+        "year": 2035,
+        "month": 2,
+        "sofr": 4.4342
+      },
+      {
+        "date": "March-35",
+        "year": 2035,
+        "month": 3,
+        "sofr": 4.443
+      },
+      {
+        "date": "April-35",
+        "year": 2035,
+        "month": 4,
+        "sofr": 4.4515
+      },
+      {
+        "date": "May-35",
+        "year": 2035,
+        "month": 5,
+        "sofr": 4.46
+      },
+      {
+        "date": "June-35",
+        "year": 2035,
+        "month": 6,
+        "sofr": 4.4679
+      },
+      {
+        "date": "July-35",
+        "year": 2035,
+        "month": 7,
+        "sofr": 4.4767
+      },
+      {
+        "date": "August-35",
+        "year": 2035,
+        "month": 8,
+        "sofr": 4.4854
+      },
+      {
+        "date": "September-35",
+        "year": 2035,
+        "month": 9,
+        "sofr": 4.495
+      },
+      {
+        "date": "October-35",
+        "year": 2035,
+        "month": 10,
+        "sofr": 4.5035
+      },
+      {
+        "date": "November-35",
+        "year": 2035,
+        "month": 11,
+        "sofr": 4.5111
+      },
+      {
+        "date": "December-35",
+        "year": 2035,
+        "month": 12,
+        "sofr": 4.5205
+      },
+      {
+        "date": "January-36",
+        "year": 2036,
+        "month": 1,
+        "sofr": 4.5294
+      },
+      {
+        "date": "February-36",
+        "year": 2036,
+        "month": 2,
+        "sofr": 4.5372
+      },
+      {
+        "date": "March-36",
+        "year": 2036,
+        "month": 3,
+        "sofr": 4.547
+      },
+      {
+        "date": "April-36",
+        "year": 2036,
+        "month": 4,
+        "sofr": 4.5556
+      },
+      {
+        "date": "May-36",
+        "year": 2036,
+        "month": 5,
+        "sofr": 4.5646
+      },
+      {
+        "date": "June-36",
+        "year": 2036,
+        "month": 6,
+        "sofr": 4.5739
+      },
+      {
+        "date": "July-36",
+        "year": 2036,
+        "month": 7,
+        "sofr": 4.5832
+      },
+      {
+        "date": "August-36",
+        "year": 2036,
+        "month": 8,
+        "sofr": 4.5931
+      }
+    ]
   }
 ]
